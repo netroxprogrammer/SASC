@@ -10,6 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author mac
+ * @User login table
+ */
+
 @Entity
 @Table(name="users")
 public class Users implements Serializable{

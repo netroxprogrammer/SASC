@@ -15,7 +15,7 @@ public class UserServicesImp implements UsersServices{
 	@Autowired
 	private DaoInterfaceImp daoImp;
 	
-	public String addUsers(Users user) {
+	public boolean addUsers(Users user) {
 	
 		
 		return  daoImp.addUsers(user);

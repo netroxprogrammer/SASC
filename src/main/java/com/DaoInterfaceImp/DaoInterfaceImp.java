@@ -16,7 +16,7 @@ import com.models.Users;
 @Service
 public class DaoInterfaceImp implements UserDao {
 
-	public String addUsers(Users users) {
+	public boolean addUsers(Users users) {
      
 		SessionFactory sessionFactory = HibernateSessionManagment.getSessionFactory();
 		Session session =  sessionFactory.openSession();
@@ -26,12 +26,12 @@ public class DaoInterfaceImp implements UserDao {
 			session.save(users);
 			session.flush();
 			transaction.commit();
-			return "Check Email For Verification";
+			return true;
 	}
 		catch(HibernateException ex){
 			transaction.rollback();
 			System.err.println("Error: "+ex);
-			return "Sorry  please Try Again";
+			return false;
 		}
 		finally{
 			session.close();
